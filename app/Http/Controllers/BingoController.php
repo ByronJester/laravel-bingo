@@ -216,4 +216,15 @@ class BingoController extends Controller
             return 'O';
         }
     }
+
+    public function finishGame(Request $request)
+    {
+        $game = Game::where('is_finish', false)->first();
+
+        $game->is_finish = true;
+
+        $game->save();
+
+        return response()->json("Bingo game finished.");
+    }
 }

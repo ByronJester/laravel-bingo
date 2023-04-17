@@ -25,6 +25,7 @@ Route::middleware(['cors'])->group(function () {
         Route::post('/cards', [BingoController::class, 'getCards']);
         Route::post('/roll-number', [BingoController::class, 'rollNumber']);
         Route::post('/crossout-number', [BingoController::class, 'crossoutNumber']);
+        Route::post('/finish-game', [BingoController::class, 'finishGame']);
     });
 
 });
